@@ -42,7 +42,7 @@ def create_database(database: str, params: dict):
 
 
 # Функция для записи компаний и их вакансий в базу данных
-def save_data_to_database(data, database_name: str, params: dict):
+def save_data_to_database(data: list[dict], database_name: str, params: dict):
     conn = psycopg2.connect(dbname=database_name, **params)
 
     with conn.cursor() as cur:
